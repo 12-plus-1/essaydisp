@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react'
 // import { useFetch } from '../utils/useFetch'
 import { SingleCard } from '../components/SingleCard'
-import { LoadingStatus } from '../components/LoadingStatus'
 import data from '../data/testData2' 
 import { Footer } from '../components/Footer'
+import { useGlobalContext } from '../context'
 
 const EssayList = () => {
   // const [loading, setLoading] = useState(true)
-  const [page, setPage] = useState(0)
   const [curList, setCurlist] = useState([])
+  const {page, setPage} = useGlobalContext()
 
   useEffect(() => {
     setCurlist(data[page])
@@ -25,16 +25,6 @@ const EssayList = () => {
       setPage(page + 1)
     }
   }
-
-
-  // if (loading) {
-  //   return (
-  //     <>
-  //       <LoadingStatus />
-  //     </>
-  //   )
-  // }
-
 
   return (
     <>

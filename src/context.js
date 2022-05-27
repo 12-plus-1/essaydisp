@@ -4,6 +4,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
     const [windowSize, setWindowSize] = useState(window.innerWidth)
+    const [page, setPage] = useState(0)
 
     const changeSize = () => {
         setWindowSize(window.innerWidth)
@@ -19,6 +20,8 @@ const AppProvider = ({children}) => {
     return (
         <AppContext.Provider value={{
             windowSize,
+            page,
+            setPage,
         }}>{children}</AppContext.Provider>
     )
 }
