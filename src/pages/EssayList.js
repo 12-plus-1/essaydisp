@@ -12,7 +12,7 @@ const EssayList = () => {
 
   useEffect(() => {
     setCurlist(data[page])
-    console.log(location.hostname);
+    console.log(window.location.hostname);
   }, [page])
 
   const handlePage = (index) => {
@@ -38,7 +38,6 @@ const EssayList = () => {
             <li className="page-item"><button className='page-link' onClick={() => handleSwitch(0)}><span aria-hidden="true">&laquo;</span></button></li>
             {
               data.map((item, index) => {
-                console.log(index)
                 return (
                   <li className={`page-item ${index === page && 'active'}`} key={index}><button className='page-link' onClick={() => handlePage(index)}>{index + 1}</button></li>
                 )
@@ -65,7 +64,6 @@ const EssayList = () => {
             <li className="page-item"><button className='page-link' onClick={() => handleSwitch(0)}><span aria-hidden="true">&laquo;</span></button></li>
             {
               data.map((item, index) => {
-                console.log(index)
                 return (
                   <li className={`page-item ${index === page && 'active'}`} key={index}><button className='page-link' onClick={() => handlePage(index)}>{index + 1}</button></li>
                 )
