@@ -12,6 +12,7 @@ const EssayList = () => {
 
   useEffect(() => {
     setCurlist(data[page])
+    console.log(location.hostname);
   }, [page])
 
   const handlePage = (index) => {
